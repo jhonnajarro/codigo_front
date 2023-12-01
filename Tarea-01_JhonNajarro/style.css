@@ -1,0 +1,171 @@
+body{
+    background-color: rgb(87, 189, 230);
+}
+.container {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 10px 10px; 
+    grid-template-areas: 
+      "Header Header Header Header Header"
+      "Aside Main Main Main Main"
+      "Aside Main Main Main Main"
+      "Aside Main Main Main Main"
+      "Aside Main Main Main Main"
+      "Footer Footer Footer Footer Footer"; 
+  }
+  header { 
+    grid-area: Header;
+    background-color: turquoise;
+    display: flex;
+    position: sticky;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    
+
+}
+header img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+header nav{
+    display: flex;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+
+header nav ul li{
+    margin: 0 10px;
+    background-color: orange;
+    border-radius: 6px;
+    min-width: 50px;
+    padding: 0px 20px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+}
+
+aside {
+     grid-area: Aside;
+     display: flex;
+     background-color: yellow;
+     margin: 10px; 
+     position: relative;
+     padding: 10px;
+     border-radius: 10px;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+aside > img{
+    
+    width: 200px;
+    border-radius: 3px;
+}
+
+main {
+     grid-area: Main;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+    }
+
+    
+
+    main > section{
+        background-color: rgb(252, 151, 255);
+        display: flex;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        min-height: 200px;
+        flex-direction: column;
+    }
+    main section:first-child{
+
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 25px;
+        
+    }
+
+     .contenido{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .imagen{
+        width: 200px;
+        border-radius: 3px;
+        margin: 20px;
+    }
+    .texto{
+        width: 40%;
+        padding: 10px;
+        margin: 10px;
+    }
+  
+    footer {
+         grid-area: Footer; 
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         background-color: rgb(153, 54, 245);
+         gap: 50;
+         height: 20vw;
+         border-radius: 10px;
+         margin: 10px;
+        }
+
+    footer > h2{
+        text-align: center;
+    }
+
+    footer section ul{
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer section{
+        background-color: rgb(71, 153, 71);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        display: flex;
+        min-height: 100px;
+        min-width: 200px;
+        flex-direction: column;
+    }
+
+    #boton{
+       background-color: rgb(87, 189, 230); 
+       border-radius: 50%;
+       padding: 10px;
+       margin: 10px;
+       border: none;
+       font-size: 1.5rem;
+       cursor: pointer;
+       position: fixed;
+       right: 10px;
+       height: 80px;
+       width: 80px;
+       bottom: 0;
+    }
+ 
+
+ 
