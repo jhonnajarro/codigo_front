@@ -1,0 +1,112 @@
+$ruta-fonts: "./assets/fonts/static";
+
+@mixin font-route($tipo) {
+  @if $tipo == "regular" {
+    @font-face {
+      font-family: "WorkSans";
+      src: url("#{$ruta-fonts}/WorkSans-Regular.ttf") format("ttf");
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  @if $tipo == "bold" {
+    @font-face {
+      font-family: "WorkSans";
+      src: url("#{$ruta-fonts}/WorkSans-Bold.ttf") format("ttf");
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(240, 224, 243);
+    background-repeat: no-repeat ;
+    background-size: 100%;
+    @include font-route("bold");
+    font-family: "WorkSans", 'sans-serif';
+    display: grid;
+    min-height: 100vh;
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    place-content: center;
+}
+
+img, svg{
+    max-width: 100%;
+    display: block;
+
+}
+
+button{
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1 rem;
+    border: 0;
+}
+
+button:hover{
+    color: purple;
+}
+
+.faqs{
+    background-color: white;
+    max-width: 800px;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.faqs__header{
+    display: flex;
+    gap: 1rem;
+}
+
+.faqs__header h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.faqs .accordion-item:not(:last-child){
+    border-bottom: 2px solid rgb(180, 172, 189);
+}
+
+.accordion-item .icons img{
+    min-width: 30px;
+}
+
+.accordion-item .icons .minus-icon{
+    display: none;
+}
+
+.accordion-descripcion{
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease;
+}
+
+.accordion-descripcion p{
+    color: purple;
+    padding: 1.5rem 0;
+}
+
+@media(max-width: 540px){
+    body{
+        background-image: url(./assets/images/background-pattern-mobile.svg);
+    }
+}
+
